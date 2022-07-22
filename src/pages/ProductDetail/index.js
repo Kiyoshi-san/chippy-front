@@ -14,8 +14,11 @@ export default function Banner(props) {
   const productOffers = useSelector((state) => state.productOffers);
   const { loading, data, error } = productOffers;
   useEffect(() => {
-    dispatch(listProductOffers());
-  }, [dispatch, listProductOffers.length]);
+    var dispatchHandler = () => {
+      dispatch(listProductOffers());
+    };
+    dispatchHandler();
+  }, []);
 
   const productDetailList = useSelector((state) => state.productDetail);
   const { productDetail } = productDetailList;
@@ -26,8 +29,11 @@ export default function Banner(props) {
     },
   } = props;
   useEffect(() => {
-    dispatch(detailProduct(id));
-  }, [dispatch, detailProduct[0]?._id]);
+    var dispatchHandler = () => {
+      dispatch(detailProduct(id));
+    };
+    dispatchHandler();
+  }, [id]);
 
   return (
     <div className="product-detail-page-container">

@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import ProductTileDescription from "../../ProductTile/components/ProductTileDescription";
 
 export default function ProductLineItemsDaysOffer(props) {
-  const { productId, category, name, image, newPrice, rating } = props;
+  const { productId, categoryName, name, image, newPrice, rating } = props;
   return (
     <div className="product-line-items-days-offer">
-      <Link to={`/product/${category}/${name}/${productId}`}>
+      <Link to={`/product/${categoryName}/${name}/${productId}`}>
         <div className="image-container">
           <img src={image} alt={name} />
         </div>
@@ -15,7 +15,7 @@ export default function ProductLineItemsDaysOffer(props) {
         <ProductTileDescription
           productId={productId}
           name={name}
-          category={category}
+          categoryName={categoryName}
           newPrice={newPrice}
           rating={rating}
         ></ProductTileDescription>

@@ -8,6 +8,7 @@ import {
 } from "../reducers/product";
 import { orderListReducer } from "../reducers/order";
 import { categoriesListReducer } from "../reducers/category";
+import { addProductToCartReducer } from "../reducers/cart";
 
 const initialState = {
   loading: false,
@@ -21,6 +22,7 @@ const reducer = combineReducers({
   productOffers: productOffersReducer,
   categoriesList: categoriesListReducer,
   productDetail: productDetailReducer,
+  addProductToCart: addProductToCartReducer,
 });
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE || compose;

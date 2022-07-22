@@ -3,6 +3,7 @@ import ProductLineItemsDaysOffer from "../../ProductLineItems/components/Product
 
 export default function PopularProductsDeals(props) {
   const { daysOffer } = props;
+
   return (
     <div className="popular-products-deals">
       <div className="title">
@@ -18,7 +19,7 @@ export default function PopularProductsDeals(props) {
                 productId={dO._id}
                 image={dO.image[0]}
                 name={dO.name}
-                category={dO.category}
+                categoryName={dO.categoryName}
                 newPrice={dO.newPrice}
                 rating={dO.rating}
               />

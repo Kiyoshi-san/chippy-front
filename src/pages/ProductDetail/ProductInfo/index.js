@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import RatingStars from "../../../components/ProductTile/components/RatingStars";
-import { listProductOffers } from "../../../redux/actions/product";
-import ProductTile from "../../../components/ProductTile";
+import RatingStars from "../components/ProductTile/components/RatingStars";
+import { listProductOffers } from "redux/actions/product";
+import ProductTile from "../components/ProductTile";
 import { Link } from "react-router-dom";
 
 export default function ProductInfo(props) {
@@ -15,7 +15,7 @@ export default function ProductInfo(props) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(listProductOffers());
-  }, []);
+  });
 
   const activeTabHandler = (tabIndex) => {
     activeTab !== tabIndex ? setActiveTab(tabIndex) : setActiveTab("");
@@ -80,8 +80,8 @@ export default function ProductInfo(props) {
           ) : activeTab == 3 ? (
             <div className="review-product-container">
               {productDetail?.review ? (
-                productDetail.review.map((reviews) => (
-                  <div className="product-review-container">
+                productDetail.review.map((reviews, id) => (
+                  <div key={id} className="product-review-container">
                     <div className="review-user-name">
                       <span>{reviews?.user}</span>
                     </div>
@@ -110,8 +110,8 @@ export default function ProductInfo(props) {
             </div>
           ) : activeTab == 5 ? (
             <div className="more-products-container">
-              {productOffer?.map((prodOffer) => (
-                <div className="more-product-box">
+              {productOffer?.map((prodOffer, id) => (
+                <div key={id} className="more-product-box">
                   <ProductTile product={prodOffer} />
                 </div>
               ))}
@@ -154,8 +154,8 @@ export default function ProductInfo(props) {
           <div className="body-container">
             <div className="review-product-container">
               {productDetail?.review ? (
-                productDetail.review.map((reviews) => (
-                  <div className="product-review-container">
+                productDetail.review.map((reviews, id) => (
+                  <div key={id} className="product-review-container">
                     <div className="review-user-name">
                       <span>{reviews?.user}</span>
                     </div>
@@ -202,8 +202,8 @@ export default function ProductInfo(props) {
           </div>
           <div className="body-container">
             <div className="more-products-container">
-              {productOffer?.map((prodOffer) => (
-                <div className="more-product-box">
+              {productOffer?.map((prodOffer, id) => (
+                <div key={id} className="more-product-box">
                   <ProductTile product={prodOffer} />
                 </div>
               ))}

@@ -19,9 +19,7 @@ export default function NewsLetter() {
                     placeholder="Email"
                   />
                 </div>
-                <button type="submit" onClick={() => {}}>
-                  Inscrever-se
-                </button>
+                <button type="submit">Inscrever-se</button>
               </form>
             </div>
           </div>

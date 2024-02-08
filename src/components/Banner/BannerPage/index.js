@@ -1,5 +1,4 @@
 import React from "react";
-import productDetailPage from "../../../assets/images/banner/banner_product_detail_page.jpg";
 
 export default function BannerPage(props) {
   const { title } = props;
@@ -9,7 +8,7 @@ export default function BannerPage(props) {
         <h3>{title}</h3>
       </div>
       <div className="banner-page-img">
-        <img src={productDetailPage} alt="" />
+        <img src={"images/banner/banner_product_detail_page.jpg"} alt="" />
       </div>
     </div>
   );

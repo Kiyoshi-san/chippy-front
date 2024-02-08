@@ -1,13 +1,13 @@
 import React from "react";
-import visa from "../../assets/images/payment-methods/pag_peqcartaovisa.png";
-import mastercard from "../../assets/images/payment-methods/pag_peqcartaomastercard.png";
-import amex from "../../assets/images/payment-methods/pag_peqcartaoamex.png";
-import diners from "../../assets/images/payment-methods/pag_peqcartaodiners.png";
-import elo from "../../assets/images/payment-methods/pag_peqcartaoelo.png";
-import hipercard from "../../assets/images/payment-methods/pag_peqcartaohiperit.png"; // vermelho
-import hiper2 from "../../assets/images/payment-methods/pag_pd_peqcartaohiper.png";
-import playstore from "../../assets/images/app-store/googleplay.png";
-import appstore from "../../assets/images/app-store/apstore.png";
+import visa from "images/payment-methods/pag_peqcartaovisa.png";
+import mastercard from "images/payment-methods/pag_peqcartaomastercard.png";
+import amex from "images/payment-methods/pag_peqcartaoamex.png";
+import diners from "images/payment-methods/pag_peqcartaodiners.png";
+import elo from "images/payment-methods/pag_peqcartaoelo.png";
+import hipercard from "images/payment-methods/pag_peqcartaohiperit.png"; // vermelho
+import hiper2 from "images/payment-methods/pag_pd_peqcartaohiper.png";
+import playstore from "images/app-store/googleplay.png";
+import appstore from "images/app-store/apstore.png";
 
 export default function Footer() {
   const footerFirstSectionData = [
@@ -38,19 +38,19 @@ export default function Footer() {
   const cards = [visa, mastercard, amex, diners, elo, hipercard, hiper2];
 
   return (
-    <div class="footer-container">
+    <div className="footer-container">
       <div className="body-row-container">
         <div className="body-row">
           <div className="our-services-container">
             <div className="first-foot-section">
-              {footerFirstSectionData?.map((el) => (
-                <div className="column">
+              {footerFirstSectionData?.map((el, idx) => (
+                <div key={idx} className="column">
                   <div className="title">
                     <h3>{el.title}</h3>
                   </div>
                   <ul>
-                    {el.items.map((its) => (
-                      <li>
+                    {el.items.map((its, id) => (
+                      <li key={id}>
                         <a href="#">
                           <i className="icon icon-triangle-right-arrow"></i>
                           {its}
@@ -84,8 +84,8 @@ export default function Footer() {
                     </span>
                   </li>
                   <li className="image-cards">
-                    {cards?.map((card) => (
-                      <img src={card} alt="" />
+                    {cards?.map((card, id) => (
+                      <img key={id} src={card} alt="" />
                     ))}
                   </li>
                 </ul>

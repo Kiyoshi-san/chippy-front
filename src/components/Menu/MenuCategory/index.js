@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { listCategories } from "../../../redux/actions/category";
+import { listCategories } from "redux/actions/category";
 
 export default function MenuCategory() {
   const categoryList = useSelector((state) => state.categoriesList);
@@ -9,7 +9,7 @@ export default function MenuCategory() {
   const [categoryPosFixed, setCategoryPosFixed] = useState("");
   const [categoryMenuMobile, setCategoryMenuMobile] = useState("");
   const [menuIcon, setMenuIcon] = useState("");
-  const [closeIcon, setCloseIcon] = useState("");
+  const [closeIcon] = useState("");
 
   const categoriesRoot = categories?.filter((obj) => {
     return obj.parentCategoryId === "root";
@@ -55,8 +55,8 @@ export default function MenuCategory() {
       ></i>
       <div className={`menu-category-box ${categoryMenuMobile}`}>
         <div className="categories">
-          {categoriesRoot?.map((cat) => (
-            <Link to={`/${cat.categoryId}`}>
+          {categoriesRoot?.map((cat, id) => (
+            <Link key={id} to={`/${cat.categoryId}`}>
               <div
                 className="category-item click-underline-container"
                 key={`${cat.name}${cat.categoryId}`}

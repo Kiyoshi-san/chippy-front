@@ -5,7 +5,7 @@ import {
   CATEGORY_LIST_FAIL,
 } from "./constants";
 
-export const listCategories = () => async (dispatch, getState) => {
+export const listCategories = () => async (dispatch) => {
   dispatch({ type: CATEGORY_LIST_REQUEST });
   try {
     const { data } = await Axios.get("/api/categories");

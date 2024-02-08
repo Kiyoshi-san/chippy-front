@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import ButtonFilled from "../../../components/Button/ButtonFilled";
-import { addProductToCart } from "../../../redux/actions/cart";
+import ButtonFilled from "../components/Button/ButtonFilled";
+import { addProductToCart } from "redux/actions/cart";
 
 export default function AddToCartPdpForm(props) {
   const [qtyValue, setQtyValue] = useState(1);
-
-  const productId = props.productDetail?._id;
 
   const valueGreat1 = qtyValue > 1 ? true : false;
 
@@ -43,14 +41,14 @@ export default function AddToCartPdpForm(props) {
               type="button"
               onClick={incrementValue}
               value="+"
-              class="button-plus"
+              className="button-plus"
               data-field="quantity"
             />
             <input
               type="button"
               onClick={decrementValue}
               value="-"
-              class="button-minus"
+              className="button-minus"
               data-field="quantity"
               disabled={!valueGreat1}
             />

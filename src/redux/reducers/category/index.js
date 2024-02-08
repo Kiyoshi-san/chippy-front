@@ -6,7 +6,7 @@ import {
 
 export const categoriesListReducer = (
   intialState = { loading: false, categories: [], error: null },
-  action
+  action,
 ) => {
   switch (action.type) {
     case CATEGORY_LIST_REQUEST:

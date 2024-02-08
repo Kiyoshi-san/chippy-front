@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Banner from "../../components/Banner";
-import DealsOfTheDay from "../../components/DealsOfTheDay";
-import ProductCarousel from "../../components/ProductCarousel";
-import CategoryBanners from "../../components/CategoryBanners";
-import ServiceBanner from "../../components/ServiceBanner";
-import { listProductOffers } from "../../redux/actions/product";
+import Banner from "components/Banner";
+import DealsOfTheDay from "components/DealsOfTheDay";
+import ProductCarousel from "components/ProductCarousel";
+import CategoryBanners from "components/CategoryBanners";
+import ServiceBanner from "components/ServiceBanner";
+import { listProductOffers } from "redux/actions/product";
 
 export default function HomePage() {
-  const [days, setDays] = useState(780);
-  const [hours, setHours] = useState(4);
-  const [mins, setMins] = useState(26);
-  const [secs, setSecs] = useState(42);
+  const [days] = useState(780);
+  const [hours] = useState(4);
+  const [mins] = useState(26);
+  const [secs] = useState(42);
 
   const productOffers = useSelector((state) => state.productOffers);
-  const { loading, data, error } = productOffers;
+  const { data } = productOffers;
 
   const dispatch = useDispatch();
   useEffect(() => {

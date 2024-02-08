@@ -6,7 +6,7 @@ import {
 
 import Axios from "axios";
 
-export const addProductToCart = (dataProduct) => async (dispatch, getState) => {
+export const addProductToCart = (dataProduct) => async (dispatch) => {
   dispatch({ type: ADD_PRODUCT_CART_REQUEST });
   try {
     const { data } = await Axios.post(
@@ -23,7 +23,7 @@ export const addProductToCart = (dataProduct) => async (dispatch, getState) => {
         headers: {
             Authorization: `Bearer ${userInfo.token}`
         }
-    } */
+    } */,
     );
     dispatch({ type: ADD_PRODUCT_CART_SUCCESS, payload: data });
   } catch (error) {

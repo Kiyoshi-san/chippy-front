@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { listProducts } from "../../redux/actions/product";
+import { listProducts } from "redux/actions/product";
 
 export default function ProductList() {
   const productList = useSelector((state) => state.productList);
@@ -13,7 +13,8 @@ export default function ProductList() {
 
   return (
     <div>
-      {products?.length && products.map((product) => <div>{product.name}</div>)}
+      {products?.length &&
+        products.map((product, id) => <div key={id}>{product.name}</div>)}
     </div>
   );
 }

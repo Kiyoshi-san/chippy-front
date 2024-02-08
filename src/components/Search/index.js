@@ -1,7 +1,9 @@
 import React from "react";
 
 export default function Search() {
-  const submitHandler = (e) => {};
+  const submitHandler = (e) => {
+    console.log(e);
+  };
   return (
     <div className="search-component hide-for-small-only">
       <form onSubmit={submitHandler}>

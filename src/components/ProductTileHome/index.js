@@ -29,10 +29,7 @@ export default function ProductTileHome(props) {
     },
   };
 
-  const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
-    const {
-      carouselState: { currentSlide },
-    } = rest;
+  const ButtonGroup = ({ next, previous }) => {
     return (
       <div className="carousel-button-group">
         <ButtonHoverEffect onClick={() => previous()}>

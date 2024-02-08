@@ -27,8 +27,8 @@ export default function ProductDetailImage(props) {
       showStatus={false}
     >
       {productDetail?.image.length &&
-        productDetail?.image.map((prodDetailImg) => (
-          <div className="product-detail-page-carousel-image-zoom">
+        productDetail?.image.map((prodDetailImg, id) => (
+          <div key={id} className="product-detail-page-carousel-image-zoom">
             <img className="thumbnail-carousel-zoom" src={prodDetailImg} />
             <SideBySideMagnifier
               className="input-position"

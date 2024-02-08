@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Carousel from "react-multi-carousel";
 import ButtonHoverEffect from "../Button/ButtonHoverEffect";
 import ProductTile from "../ProductTile";
@@ -35,10 +35,6 @@ export default function ProductCarousel(props) {
   };
 
   const CustomRightArrow = ({ onClick, ...rest }) => {
-    const {
-      onMove,
-      carouselState: { currentSlide, deviceType },
-    } = rest;
     // onMove means if dragging or swiping in progress.
     return (
       <ButtonHoverEffect {...rest} onClick={() => onClick()}>
@@ -48,10 +44,6 @@ export default function ProductCarousel(props) {
   };
 
   const CustomLeftArrow = ({ onClick, ...rest }) => {
-    const {
-      onMove,
-      carouselState: { currentSlide, deviceType },
-    } = rest;
     // onMove means if dragging or swiping in progress.
     return (
       <ButtonHoverEffect {...rest} onClick={() => onClick()}>
@@ -84,8 +76,8 @@ export default function ProductCarousel(props) {
           customRightArrow={<CustomRightArrow />}
           customLeftArrow={<CustomLeftArrow />}
         >
-          {products?.map((prd) => (
-            <ProductTile product={prd} />
+          {products?.map((prd, id) => (
+            <ProductTile key={id} product={prd} />
           ))}
         </Carousel>
       )}

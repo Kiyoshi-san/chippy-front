@@ -1,5 +1,5 @@
 import React from "react";
-import RatingStars from "../../../components/ProductTile/components/RatingStars";
+import RatingStars from "../components/ProductTile/components/RatingStars";
 import AddToCartPdpForm from "../AddToCartPdpForm";
 
 export default function ProductDetailInfo(props) {
@@ -8,7 +8,7 @@ export default function ProductDetailInfo(props) {
   const inStock = !!productDetail?.countInStock;
 
   return (
-    <div class="product-detail-info-container">
+    <div className="product-detail-info-container">
       <div className="title-container">
         <h3>{productDetail?.name}</h3>
       </div>

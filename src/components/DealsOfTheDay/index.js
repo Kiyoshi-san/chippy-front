@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import MultCategories from "./MultCategories";
+import React, { useEffect } from "react";
 import ProductTileHome from "../ProductTileHome";
+import MultCategories from "./MultCategories";
 import PopularProductsDeals from "./components/PopularProductsDeals";
 
 export default function DealsOfTheDay(props) {

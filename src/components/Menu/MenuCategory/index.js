@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { listCategories } from "redux/actions/category";
+import { listCategories } from "../../../redux/actions/category";
 
 export default function MenuCategory() {
   const categoryList = useSelector((state) => state.categoriesList);
@@ -18,7 +18,7 @@ export default function MenuCategory() {
   const dispatch = useDispatch(listCategories());
   useEffect(() => {
     dispatch(listCategories());
-  }, []);
+  }, [dispatch]);
 
   /* const headerHeight = document.querySelectorAll(
     ".top-header-menu-box"
@@ -26,7 +26,7 @@ export default function MenuCategory() {
   const headerHeight = 90;
 
   useEffect(() => {
-    window.addEventListener("scroll", (a) => {
+    window.addEventListener("scroll", () => {
       if (window.scrollY >= headerHeight) {
         setCategoryPosFixed("category-fixed");
       } else {

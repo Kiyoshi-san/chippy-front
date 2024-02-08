@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import RatingStars from "../components/ProductTile/components/RatingStars";
-import { listProductOffers } from "redux/actions/product";
-import ProductTile from "../components/ProductTile";
 import { Link } from "react-router-dom";
+import RatingStars from "../../../components/ProductTile/components/RatingStars";
+import ProductTile from "../../../components/ProductTile";
+import { listProductOffers } from "../../../redux/actions/product";
 
 export default function ProductInfo(props) {
   const { productDetail } = props;

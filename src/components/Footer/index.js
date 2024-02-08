@@ -1,13 +1,4 @@
 import React from "react";
-import visa from "images/payment-methods/pag_peqcartaovisa.png";
-import mastercard from "images/payment-methods/pag_peqcartaomastercard.png";
-import amex from "images/payment-methods/pag_peqcartaoamex.png";
-import diners from "images/payment-methods/pag_peqcartaodiners.png";
-import elo from "images/payment-methods/pag_peqcartaoelo.png";
-import hipercard from "images/payment-methods/pag_peqcartaohiperit.png"; // vermelho
-import hiper2 from "images/payment-methods/pag_pd_peqcartaohiper.png";
-import playstore from "images/app-store/googleplay.png";
-import appstore from "images/app-store/apstore.png";
 
 export default function Footer() {
   const footerFirstSectionData = [
@@ -34,6 +25,16 @@ export default function Footer() {
       ],
     },
   ];
+
+  const visa = "images/payment-methods/pag_peqcartaovisa.png";
+  const mastercard = "images/payment-methods/pag_peqcartaomastercard.png";
+  const amex = "images/payment-methods/pag_peqcartaoamex.png";
+  const diners = "images/payment-methods/pag_peqcartaodiners.png";
+  const elo = "images/payment-methods/pag_peqcartaoelo.png";
+  const hipercard = "images/payment-methods/pag_peqcartaohiperit.png"; // vermelho
+  const hiper2 = "images/payment-methods/pag_pd_peqcartaohiper.png";
+  const playstore = "images/app-store/googleplay.png";
+  const appstore = "images/app-store/apstore.png";
 
   const cards = [visa, mastercard, amex, diners, elo, hipercard, hiper2];
 

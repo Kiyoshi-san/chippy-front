@@ -1,15 +1,14 @@
 import Axios from "axios";
-import { headers, errorMessage } from "../../../utils/config";
 import {
-  PRODUCT_LIST_REQUEST,
-  PRODUCT_LIST_SUCCESS,
-  PRODUCT_LIST_FAIL,
-  PRODUCT_OFFERS_REQUEST,
-  PRODUCT_OFFERS_SUCCESS,
-  PRODUCT_OFFERS_FAIL,
+  PRODUCT_DETAIL_FAIL,
   PRODUCT_DETAIL_REQUEST,
   PRODUCT_DETAIL_SUCCESS,
-  PRODUCT_DETAIL_FAIL,
+  PRODUCT_LIST_FAIL,
+  PRODUCT_LIST_REQUEST,
+  PRODUCT_LIST_SUCCESS,
+  PRODUCT_OFFERS_FAIL,
+  PRODUCT_OFFERS_REQUEST,
+  PRODUCT_OFFERS_SUCCESS,
 } from "./constants";
 
 export const listProducts =
@@ -37,7 +36,7 @@ export const listProducts =
     }
   };
 
-export const listProductOffers = () => async (dispatch, getState) => {
+export const listProductOffers = () => async (dispatch) => {
   dispatch({
     type: PRODUCT_OFFERS_REQUEST,
   });
@@ -49,7 +48,7 @@ export const listProductOffers = () => async (dispatch, getState) => {
   }
 };
 
-export const detailProduct = (id) => async (dispatch, getState) => {
+export const detailProduct = (id) => async (dispatch) => {
   dispatch({ type: PRODUCT_DETAIL_REQUEST });
   try {
     const { data } = await Axios.get(`/api/products/${id}`);

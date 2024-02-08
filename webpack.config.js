@@ -3,7 +3,7 @@ var path = require("path");
 module.exports = {
   resolve: {
     modules: [path.resolve("./src")],
-    extensions: ["", ".js", ".jsx"],
+    extensions: ["", ".js", ".jsx", ".ts", ".tsx"],
   },
   module: {
     rules: [
@@ -19,7 +19,7 @@ module.exports = {
       },
     ],
   },
-  mode: 'development', // or 'production'
+  mode: "development", // or 'production'
   entry: "./src/index.js",
   output: {
     filename: "bundle.js",

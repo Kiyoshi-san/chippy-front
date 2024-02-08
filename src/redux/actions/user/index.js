@@ -6,12 +6,9 @@ import {
   USER_LIST_FAIL,
 } from "../user/constants";
 
-export const listUsers = () => async (dispatch, getState) => {
+export const listUsers = () => async (dispatch) => {
   dispatch({ type: USER_LIST_REQUEST });
   try {
-    const {
-      userSignin: { userInfo },
-    } = getState();
     const { data } = await Axios.get("/api/users", {
       headers,
     });

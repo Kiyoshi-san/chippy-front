@@ -1,11 +1,13 @@
+$base-path: "~/src/scss/foundation/font/"; // ~ - root of the project
+
 @mixin fonticon($fontName) {
     font-family: $fontName;
-    src: url('../font/'+$fontName+'.eot');
-    src: url('../font/'+$fontName+'.eot#iefix') format('embedded-opentype'),
-         url('../font/'+$fontName+'.woff2') format('woff2'),
-         url('../font/'+$fontName+'.woff') format('woff'),
-         url('../font/'+$fontName+'.ttf') format('truetype'),
-         url('../font/'+$fontName+'.svg#'+$fontName) format('svg');
+    src: url($base-path + $fontName+'.eot');
+    src: url($base-path + $fontName+'.eot#iefix') format('embedded-opentype'),
+         url($base-path + $fontName+'.woff2') format('woff2'),
+         url($base-path + $fontName+'.woff') format('woff'),
+         url($base-path + $fontName+'.ttf') format('truetype'),
+         url($base-path + $fontName+'.svg#'+$fontName) format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -13,14 +15,14 @@
 @font-face {
     @include fonticon('fonte');
 }
-   
+
 .icon {
     &:before{
         font-family: "fonte";
         font-style: normal;
         font-weight: normal;
         // speak: never;
-       
+
         display: inline-block;
         text-decoration: inherit;
         width: 1em;
@@ -28,25 +30,25 @@
         text-align: center;
         vertical-align: middle;
         /* opacity: .8; */
-       
+
         /* For safety - reset parent styles, that can break glyph codes*/
         font-variant: normal;
         text-transform: none;
-       
+
         /* fix buttons height, for twitter bootstrap */
         line-height: 1em;
-       
+
         /* Animation center compensation - margins should be symmetric */
         /* remove if not needed */
         margin-left: .2em;
-       
+
         /* you can be more comfortable with increased icons size */
         /* font-size: 120%; */
-       
+
         /* Font smoothing. That was taken from TWBS */
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-       
+
         /* Uncomment for 3D effect */
         /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
     }
@@ -75,4 +77,3 @@
     &-menu:before { content: '\e828'; }
     &-close:before { content: '\e829'; }
 }
-   

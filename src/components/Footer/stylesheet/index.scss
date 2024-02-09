@@ -1,3 +1,5 @@
+$root-path: "~/src/assets/images/";
+
 .footer-container {
     position: relative;
     &:before {
@@ -5,7 +7,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        background: url("../../../assets/images/dog-and-cat.png");
+        background: url($root-path + "dog-and-cat.png");
         background-size: 100%;
         filter: brightness(0.3);
     }

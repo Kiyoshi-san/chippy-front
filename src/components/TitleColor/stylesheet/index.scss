@@ -1,7 +1,7 @@
 .title-color-container {
     width: fit-content;
-    margin: rem-calc(20 auto);
-    padding: rem-calc(10 0);
+    margin: rem-calc(20) auto;
+    padding: rem-calc(10) 0;
     border-top: solid rem-calc(1) map-get(map-get($foundation-palette, primary), third);
     border-bottom: solid rem-calc(1) map-get(map-get($foundation-palette, primary), third);
     span {

@@ -23,7 +23,7 @@ export default function HomePage() {
 
   return (
     <div className="pt_homepage">
-      <Banner></Banner>
+      <Banner />
       <div className="body-row-container bg-gray">
         <div className="body-row">
           <DealsOfTheDay

@@ -1,14 +1,17 @@
 import React from "react";
+import banner from "../../../assets/images/banner/banner_product_detail_page.jpg";
 
 export default function BannerPage(props) {
   const { title } = props;
   return (
     <div className="banner-page-container">
-      <div className="banner-page-title">
-        <h3>{title}</h3>
-      </div>
+      {!!title && (
+        <div className="banner-page-title">
+          <h3>{title}</h3>
+        </div>
+      )}
       <div className="banner-page-img">
-        <img src={"images/banner/banner_product_detail_page.jpg"} alt="" />
+        <img src={banner} alt="" />
       </div>
     </div>
   );

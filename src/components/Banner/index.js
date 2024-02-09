@@ -3,6 +3,11 @@ import Carousel from "react-multi-carousel";
 import ButtonFilled from "../Button/ButtonFilled/index";
 import "react-multi-carousel/lib/styles.css";
 
+import banner1 from "../../assets/images/banner/banner1.jpg";
+import banner2 from "../../assets/images/banner/banner2.jpg";
+import banner3 from "../../assets/images/banner/banner3.jpg";
+import banner4 from "../../assets/images/banner/banner4.jpg";
+
 export default function Banner() {
   const [animatedClassTitle, setAnimatedClassTitle] =
     useState("title-animated");
@@ -59,7 +64,7 @@ export default function Banner() {
       >
         <div>
           <div className="imageMask"></div>
-          <img src={"images/banner/banner1.jpg"} />
+          <img src={banner1} />
           <h1 className={`title ${animatedClassTitle}`}>Legend 1</h1>
           <div className={`subtitle-container ${animatedClassSubTitle}`}>
             <h1 className={`subtitle ${animatedClassSubTitle}`}>
@@ -70,7 +75,7 @@ export default function Banner() {
         </div>
         <div>
           <div className="imageMask"></div>
-          <img src={"images/banner/banner2.jpg"} />
+          <img src={banner2} />
           <h1 className={`title ${animatedClassTitle}`}>Legend 2</h1>
           <div className={`subtitle-container ${animatedClassSubTitle}`}>
             <h1 className={`subtitle ${animatedClassSubTitle}`}>
@@ -81,7 +86,7 @@ export default function Banner() {
         </div>
         <div>
           <div className="imageMask"></div>
-          <img src={"images/banner/banner3.jpg"} />
+          <img src={banner3} />
           <h1 className={`title ${animatedClassTitle}`}>Legend 3</h1>
           <div className={`subtitle-container ${animatedClassSubTitle}`}>
             <h1 className={`subtitle ${animatedClassSubTitle}`}>
@@ -92,7 +97,7 @@ export default function Banner() {
         </div>
         <div>
           <div className="imageMask"></div>
-          <img src={"images/banner/banner4.jpg"} />
+          <img src={banner4} />
           <h1 className={`title ${animatedClassTitle}`}>Legend 4</h1>
           <div className={`subtitle-container ${animatedClassSubTitle}`}>
             <h1 className={`subtitle`}>Subtitle Legend 4</h1>

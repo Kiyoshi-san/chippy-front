@@ -13,13 +13,13 @@ const Routes = () => {
       <Header />
       <main className="mainContainer">
         <Switch>
-          <Route path="/" component={HomePage} exact></Route>
-          <Route path="/products" component={ProductList} exact></Route>
+          <Route path="/" element={<HomePage />} exact />
+          <Route path="/products" element={<ProductList />} exact />
           <Route
             path="/product/:category/:name/:id"
-            component={ProductDetail}
+            element={<ProductDetail />}
             exact
-          ></Route>
+          />
         </Switch>
       </main>
       <NewsLetter />

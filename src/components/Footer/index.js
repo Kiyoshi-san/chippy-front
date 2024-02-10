@@ -26,15 +26,19 @@ export default function Footer() {
     },
   ];
 
-  const visa = "/images/pag_peqcartaovisa.png";
-  const mastercard = "/images/pag_peqcartaomastercard.png";
-  const amex = "/images/pag_peqcartaoamex.png";
-  const diners = "/images/pag_peqcartaodiners.png";
-  const elo = "/images/pag_peqcartaoelo.png";
-  const hipercard = "/images/pag_peqcartaohiperit.png";
-  const hiper2 = "/images/pag_pd_peqcartaohiper.png";
-  const playstore = "/images/app-store/googleplay.png";
-  const appstore = "/images/app-store/apstore.png";
+  const visa = require("images/payment-methods/pag_peqcartaovisa.png").default;
+  const mastercard =
+    require("images/payment-methods/pag_peqcartaomastercard.png").default;
+  const amex = require("images/payment-methods/pag_peqcartaoamex.png").default;
+  const diners =
+    require("images/payment-methods/pag_peqcartaodiners.png").default;
+  const elo = require("images/payment-methods/pag_peqcartaoelo.png").default;
+  const hipercard =
+    require("images/payment-methods/pag_peqcartaohiperit.png").default; // vermelho
+  const hiper2 =
+    require("images/payment-methods/pag_pd_peqcartaohiper.png").default;
+  const playstore = require("images/app-store/googleplay.png").default;
+  const appstore = require("images/app-store/apstore.png").default;
 
   const cards = [visa, mastercard, amex, diners, elo, hipercard, hiper2];
 

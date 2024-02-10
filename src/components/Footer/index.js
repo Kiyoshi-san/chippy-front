@@ -1,15 +1,5 @@
 import React from "react";
 
-import visa from "images/payment-methods/pag_peqcartaovisa.png";
-import mastercard from "images/payment-methods/pag_peqcartaomastercard.png";
-import amex from "images/payment-methods/pag_peqcartaoamex.png";
-import diners from "images/payment-methods/pag_peqcartaodiners.png";
-import elo from "images/payment-methods/pag_peqcartaoelo.png";
-import hipercard from "images/payment-methods/pag_peqcartaohiperit.png"; // vermelo
-import hiper2 from "images/payment-methods/pag_pd_peqcartaohiper.png";
-import playstore from "images/app-store/googleplay.png";
-import appstore from "images/app-store/apstore.png";
-
 export default function Footer() {
   const footerFirstSectionData = [
     {
@@ -35,6 +25,16 @@ export default function Footer() {
       ],
     },
   ];
+
+  const visa = "/images/pag_peqcartaovisa.png";
+  const mastercard = "/images/pag_peqcartaomastercard.png";
+  const amex = "/images/pag_peqcartaoamex.png";
+  const diners = "/images/pag_peqcartaodiners.png";
+  const elo = "/images/pag_peqcartaoelo.png";
+  const hipercard = "/images/pag_peqcartaohiperit.png";
+  const hiper2 = "/images/pag_pd_peqcartaohiper.png";
+  const playstore = "/images/app-store/googleplay.png";
+  const appstore = "/images/app-store/apstore.png";
 
   const cards = [visa, mastercard, amex, diners, elo, hipercard, hiper2];
 

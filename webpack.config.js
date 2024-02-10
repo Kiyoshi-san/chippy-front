@@ -51,9 +51,6 @@ module.exports = {
           {
             loader: "sass-loader",
           },
-          {
-            loader: "css-unicode-loader",
-          },
         ],
       },
       {

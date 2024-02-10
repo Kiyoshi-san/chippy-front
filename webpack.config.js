@@ -43,11 +43,7 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: path.join(__dirname, "dist"),
-              esModule: false,
-            },
+            loader: "style-loader",
           },
           {
             loader: "css-loader",
@@ -70,12 +66,9 @@ module.exports = {
           },
         },
       },
-      {
-        test: /\.(woff|woff2|eot|ttf)(\?.*$|$)/,
+      /* {
+        test: /\.(woff|woff2|eot|ttf|otf)(\?.*$|$)/,
         use: [
-          {
-            loader: "css-unicode-loader",
-          },
           {
             loader: "file-loader",
             options: {
@@ -87,7 +80,7 @@ module.exports = {
             },
           },
         ],
-      },
+      }, */
       {
         test: /\.(svg)(\?.*$|$)/,
         use: [

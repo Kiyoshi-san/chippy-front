@@ -1,4 +1,4 @@
-import Axios from "axios";
+import axiosConfig from "reduxDir/axiosConfig.js";
 import {
   CATEGORY_LIST_REQUEST,
   CATEGORY_LIST_SUCCESS,
@@ -8,7 +8,7 @@ import {
 export const listCategories = () => async (dispatch) => {
   dispatch({ type: CATEGORY_LIST_REQUEST });
   try {
-    const { data } = await Axios.get("/api/categories");
+    const { data } = await axiosConfig.get("/api/categories");
     dispatch({ type: CATEGORY_LIST_SUCCESS, payload: data });
   } catch (error) {
     const message =

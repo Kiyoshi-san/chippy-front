@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import ButtonFilled from "../../../components/Button/ButtonFilled";
-import { addProductToCart } from "../../../redux/actions/cart";
+import ButtonFilled from "components/Button/ButtonFilled";
+import { addProductToCart } from "reduxDir/actions/cart";
 
 export default function AddToCartPdpForm(props) {
   const [qtyValue, setQtyValue] = useState(1);

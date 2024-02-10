@@ -1,4 +1,4 @@
-import Axios from "axios";
+import axiosConfig from "reduxDir/axiosConfig.js";
 import {
   PRODUCT_DETAIL_FAIL,
   PRODUCT_DETAIL_REQUEST,
@@ -27,7 +27,7 @@ export const listProducts =
       type: PRODUCT_LIST_REQUEST,
     });
     try {
-      const { data } = await Axios.get(
+      const { data } = await axiosConfig.get(
         `/api/products?pageNumber=${pageNumber}&seller=${seller}&name=${name}&category=${category}&min=${min}&max=${max}&rating=${rating}&order=${order}`,
       );
       dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
@@ -41,7 +41,7 @@ export const listProductOffers = () => async (dispatch) => {
     type: PRODUCT_OFFERS_REQUEST,
   });
   try {
-    const { data } = await Axios.get(`/api/products/productoffer`);
+    const { data } = await axiosConfig.get(`/api/products/productoffer`);
     dispatch({ type: PRODUCT_OFFERS_SUCCESS, payload: data });
   } catch (err) {
     dispatch({ type: PRODUCT_OFFERS_FAIL, payload: err.message });
@@ -51,7 +51,7 @@ export const listProductOffers = () => async (dispatch) => {
 export const detailProduct = (id) => async (dispatch) => {
   dispatch({ type: PRODUCT_DETAIL_REQUEST });
   try {
-    const { data } = await Axios.get(`/api/products/${id}`);
+    const { data } = await axiosConfig.get(`/api/products/${id}`);
     dispatch({ type: PRODUCT_DETAIL_SUCCESS, payload: data });
   } catch (error) {
     const message = error.response?.data.message

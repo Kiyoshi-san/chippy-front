@@ -18,7 +18,7 @@
     }
     .product-tile-description {
         h3 {
-            @include Poppins(800);
+            @include Courier(800);
             font-size: rem-calc(12);
             color: map-get(map-get($foundation-palette, primary), third);
         }

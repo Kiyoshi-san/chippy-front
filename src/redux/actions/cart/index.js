@@ -1,15 +1,14 @@
+import axiosConfig from "reduxDir/axiosConfig.js";
 import {
   ADD_PRODUCT_CART_REQUEST,
   ADD_PRODUCT_CART_SUCCESS,
   ADD_PRODUCT_CART_FAIL,
 } from "./constants";
 
-import Axios from "axios";
-
 export const addProductToCart = (dataProduct) => async (dispatch) => {
   dispatch({ type: ADD_PRODUCT_CART_REQUEST });
   try {
-    const { data } = await Axios.post(
+    const { data } = await axiosConfig.post(
       "/api/cart",
       {
         cartItems: {

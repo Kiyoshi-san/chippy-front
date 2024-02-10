@@ -15,8 +15,8 @@ $AvalonXLightObl: 'AvalonXLightObl', Arial, sans-serif;
 $Georgia: Georgia, "Times New Roman", Times, serif;
 $Helvetica: 'Helvetica neue', Helvetica, Arial;
 
-@mixin Poppins($font-weight) {
-    font-family: 'Poppins', Helvetica, sans-serif;
+@mixin Courier($font-weight) {
+    font-family: 'Courier New', Helvetica, sans-serif;
     font-weight: $font-weight;
 }
 
@@ -30,7 +30,7 @@ $global-header-width: rem-calc(1280);
 $foundation-palette: (
     primary: (
       first: #BEAE58, //map-get(map-get($foundation-latam, 'primary'), 'first')
-      // first: #2cddeb,      
+      // first: #2cddeb,
       second: #FFFFFF, //map-get(map-get($foundation-latam, 'primary'), 'second')
       third: #444444, //map-get(map-get($foundation-latam, 'primary'), 'third')
       fourth: #E12F2F, //map-get(map-get($foundation-latam, 'primary'), 'fourth')
@@ -129,7 +129,7 @@ $header-sizes: (
 );
 
 @mixin topBottomPadding {
-    border-left: rem-calc(1) solid map-get(map-get($foundation-palette, secondary), fifth);    
+    border-left: rem-calc(1) solid map-get(map-get($foundation-palette, secondary), fifth);
     border-bottom: rem-calc(1) solid map-get(map-get($foundation-palette, secondary), fifth);
 }
 

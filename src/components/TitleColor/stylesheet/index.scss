@@ -10,11 +10,11 @@
             text-transform: uppercase;
         }
         &:first-child {
-            @include Poppins(800);
+            @include Courier(800);
             color: map-get(map-get($foundation-palette, primary), first);
         }
         &:last-child {
-            @include Poppins(400);
+            @include Courier(400);
             color: map-get(map-get($foundation-palette, primary), third);
         }
     }

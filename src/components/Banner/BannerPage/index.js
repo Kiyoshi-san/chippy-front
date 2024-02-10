@@ -1,5 +1,5 @@
 import React from "react";
-import banner from "../../../assets/images/banner/banner_product_detail_page.jpg";
+import banner from "images/banner/banner_product_detail_page.jpg";
 
 export default function BannerPage(props) {
   const { title } = props;

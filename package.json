@@ -1,6 +1,5 @@
 {
   "name": "front",
-  "proxy": "http://127.0.0.1:5000",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -31,6 +30,8 @@
     "@babel/eslint-parser": "^7.23.10",
     "@babel/preset-react": "^7.23.3",
     "css-loader": "^6.10.0",
+    "css-unicode-loader": "^1.0.3",
+    "dotenv-webpack": "^8.0.1",
     "eslint": "^8",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",

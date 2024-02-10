@@ -8,7 +8,7 @@
             color: map-get(map-get($foundation-palette, primary), third);
             margin: rem-calc(20);
             h2 {
-                @include Poppins(800);
+                @include Courier(800);
                 font-size: rem-calc(18);
                 text-transform: uppercase;
             }
@@ -34,7 +34,7 @@
                         }
                     }
                     input {
-                        @include Poppins(400);
+                        @include Courier(400);
                         font-size: rem-calc(16);
                         border: none;
                         padding: rem-calc(15 10);
@@ -42,7 +42,7 @@
                     }
                 }
                 button {
-                    @include Poppins(800);
+                    @include Courier(800);
                     position: relative;
                     border: none;
                     background-color: map-get(map-get($foundation-palette, primary), third);
@@ -72,5 +72,5 @@
                 margin: rem-calc(0 20);
             }
         }
-    }    
+    }
 }

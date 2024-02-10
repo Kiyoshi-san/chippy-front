@@ -18,13 +18,13 @@ $paddingImg: 10px;
                     margin: 0;
                 }
                 h1 {
-                    @include Poppins(800);
+                    @include Courier(800);
                     font-size: rem-calc(14);
                     color: map-get(map-get($foundation-palette, primary), first);
                     padding: rem-calc(0 10);
                 }
                 span {
-                    @include Poppins(400);
+                    @include Courier(400);
                     font-size: rem-calc(14);
                     color: map-get(map-get($foundation-palette, primary), third);
                     display: block;

@@ -3,10 +3,10 @@ import Carousel from "react-multi-carousel";
 import ButtonFilled from "../Button/ButtonFilled/index";
 import "react-multi-carousel/lib/styles.css";
 
-import banner1 from "../../assets/images/banner/banner1.jpg";
-import banner2 from "../../assets/images/banner/banner2.jpg";
-import banner3 from "../../assets/images/banner/banner3.jpg";
-import banner4 from "../../assets/images/banner/banner4.jpg";
+import banner1 from "images/banner/banner1.jpg";
+import banner2 from "images/banner/banner2.jpg";
+import banner3 from "images/banner/banner3.jpg";
+import banner4 from "images/banner/banner4.jpg";
 
 export default function Banner() {
   const [animatedClassTitle, setAnimatedClassTitle] =

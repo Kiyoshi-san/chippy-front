@@ -1,4 +1,4 @@
-import Axios from "axios";
+import axiosConfig from "reduxDir/axiosConfig.js";
 import { headers, errorMessage } from "../../../utils/config";
 import {
   USER_LIST_REQUEST,
@@ -9,7 +9,7 @@ import {
 export const listUsers = () => async (dispatch) => {
   dispatch({ type: USER_LIST_REQUEST });
   try {
-    const { data } = await Axios.get("/api/users", {
+    const { data } = await axiosConfig.get("/api/users", {
       headers,
     });
     dispatch({ type: USER_LIST_SUCCESS, payload: data });

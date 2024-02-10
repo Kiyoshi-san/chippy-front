@@ -38,7 +38,7 @@
                 a {
                     text-decoration: none;
                     span {
-                        @include Poppins(600);
+                        @include Courier(600);
                         font-size: rem-calc(14);
                         letter-spacing: rem-calc(-1);
                         color: map-get(map-get($foundation-palette, primary), fifth);
@@ -86,7 +86,7 @@
                 a {
                     text-decoration: none;
                     span {
-                        @include Poppins(600);
+                        @include Courier(600);
                         font-size: rem-calc(14);
                         letter-spacing: rem-calc(-1);
                         color: map-get(map-get($foundation-palette, primary), fifth);

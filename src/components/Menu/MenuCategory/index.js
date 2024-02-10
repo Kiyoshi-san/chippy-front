@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { listCategories } from "../../../redux/actions/category";
+import { listCategories } from "reduxDir/actions/category";
 
 export default function MenuCategory() {
   const categoryList = useSelector((state) => state.categoriesList);

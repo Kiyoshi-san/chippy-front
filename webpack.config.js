@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const Dotenv = require("dotenv-webpack");
 
 const path = require("path");
 
@@ -11,9 +12,11 @@ module.exports = {
       images: path.resolve(__dirname, "./src/assets/images"),
       components: path.resolve(__dirname, "./src/components"),
       reduxDir: path.resolve(__dirname, "./src/redux"),
+      pages: path.resolve(__dirname, "./src/pages"),
     },
   },
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public", "index.html"),
       favicon: "./public/favicon.ico",
@@ -40,9 +43,6 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           {
-            loader: "style-loader",
-          },
-          {
             loader: MiniCssExtractPlugin.loader,
             options: {
               publicPath: path.join(__dirname, "dist"),
@@ -54,6 +54,9 @@ module.exports = {
           },
           {
             loader: "sass-loader",
+          },
+          {
+            loader: "css-unicode-loader",
           },
         ],
       },
@@ -70,6 +73,9 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf)(\?.*$|$)/,
         use: [
+          {
+            loader: "css-unicode-loader",
+          },
           {
             loader: "file-loader",
             options: {

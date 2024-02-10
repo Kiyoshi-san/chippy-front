@@ -17,10 +17,10 @@
                 width: rem-calc(41);
                 top: 0;
                 transform: rotate(180deg);
-            }            
+            }
         }
         &:nth-child(2) {
-            background-color: map-get(map-get($foundation-palette, secondary), third);     
+            background-color: map-get(map-get($foundation-palette, secondary), third);
         }
         &:nth-child(3) {
             &>img {
@@ -28,11 +28,11 @@
                 left: rem-calc(-1);
                 width: rem-calc(41);
                 top: 0;
-            }            
+            }
         }
         .description {
             h3, span {
-                @include Poppins(400);
+                @include Courier(400);
                 display: block;
                 color: map-get(map-get($foundation-palette, primary), second);
             }

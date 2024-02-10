@@ -12,20 +12,20 @@
             border-bottom: solid 2px rgba(255, 255, 255, 0.5);
             padding: rem-calc(0 20);
             h1, span {
-                font-size: rem-calc(20);                
+                font-size: rem-calc(20);
             }
             h1 {
-                @include Poppins(800);
+                @include Courier(800);
             }
             span {
-                @include Poppins(400);
+                @include Courier(400);
             }
         }
         .body {
             padding: rem-calc(0 20);
             span {
-                @include Poppins(400);
-                font-size: rem-calc(12);                
+                @include Courier(400);
+                font-size: rem-calc(12);
             }
         }
     }

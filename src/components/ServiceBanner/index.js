@@ -1,8 +1,8 @@
 import React from "react";
-import truck from "assets/images/service_image_banner/truck.png";
-import moneyBag from "assets/images/service_image_banner/money-bag.png";
-import phone from "assets/images/service_image_banner/phone.png";
-import divisor from "assets/images/divisor.png";
+import truck from "images/service_image_banner/truck.png";
+import moneyBag from "images/service_image_banner/money-bag.png";
+import phone from "images/service_image_banner/phone.png";
+import divisor from "images/divisor.png";
 
 export default function ServiceBanner() {
   return (

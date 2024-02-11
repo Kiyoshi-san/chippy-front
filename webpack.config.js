@@ -5,6 +5,26 @@ const Dotenv = require("dotenv-webpack");
 const path = require("path");
 
 module.exports = {
+  mode: "development", // or 'production'
+  entry: "./src/index.js",
+  output: {
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
+    clean: true,
+    assetModuleFilename: "[name].[ext]",
+  },
+  devtool: "source-map", // Source map mostra a linha do erro no arquivo
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, "dist"),
+    },
+    port: 3000,
+    open: true,
+    hot: true,
+    compress: true,
+    historyApiFallback: true,
+  },
   resolve: {
     modules: [path.resolve(__dirname, "./src"), "node_modules"],
     extensions: ["", ".js", ".jsx", ".ts", ".tsx"],
@@ -24,8 +44,8 @@ module.exports = {
       manifest: "./public/manifest.json",
     }),
     new MiniCssExtractPlugin({
-      filename: "static/style/[name].[hash].css",
-      chunkFilename: "static/style/[name].[hash].css",
+      filename: "[name].css",
+      chunkFilename: "[id].css",
     }),
   ],
   module: {
@@ -43,13 +63,13 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           {
-            loader: "style-loader",
+            loader: MiniCssExtractPlugin.loader,
           },
           {
-            loader: "css-loader",
+            loader: "css-loader", // 2. Turns css into commonjs
           },
           {
-            loader: "sass-loader",
+            loader: "sass-loader", // 1. Turns sass into css
           },
         ],
       },
@@ -63,33 +83,9 @@ module.exports = {
           },
         },
       },
-      /* {
-        test: /\.(woff|woff2|eot|ttf|otf)(\?.*$|$)/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              limit: 50000,
-              mimetype: "application/font-woff",
-              name: "[name].[hash].[ext]",
-              outputPath: "static/font/",
-              publicPath: (url) => `../font/${url}`,
-            },
-          },
-        ],
-      }, */
       {
-        test: /\.(svg)(\?.*$|$)/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[hash].[ext]",
-              outputPath: "static/icon/",
-              publicPath: (url) => `../static/icon/${url}`,
-            },
-          },
-        ],
+        test: /\.(woff|woff2|eot|ttf|otf|svg)(\?.*$|$)/,
+        type: "asset/resource",
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
@@ -99,18 +95,11 @@ module.exports = {
             loader: "file-loader",
             options: {
               name: "[name].[ext]", // ?name=[name].[ext] is only necessary to preserve the original file name
-              outputPath: "images/",
+              outputPath: "static/images/",
             },
           },
         ],
       },
     ],
-  },
-  mode: "development", // or 'production'
-  entry: "./src/index.js",
-  output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
-    publicPath: "/",
   },
 };

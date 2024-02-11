@@ -2,22 +2,30 @@
 
 @import "include";
 
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
-    @include Courier(normal);
-    #root {
-        position: relative;
-    }
-    a {
-        text-decoration: none;
-    }
+  @include Courier(normal);
+  #root {
+    position: relative;
+  }
+  a {
+    text-decoration: none;
+  }
 }
 
 .body-container {
-    display: flex;
-    justify-content: center;
-    .body-box {
-        max-width: rem-calc($bodyContainerWidth);
-    }
+  display: flex;
+  justify-content: center;
+  .body-box {
+      max-width: rem-calc($bodyContainerWidth);
+  }
 }
 
 .body-row-container {
@@ -36,38 +44,38 @@ body {
 }
 
 @media(min-width: map-get($breakpoints, medium)) {
-    .show-for-small-only {
-        display: none;
-    }
+  .show-for-small-only {
+      display: none;
+  }
 }
 
 @media(max-width: map-get($breakpoints, medium)) {
-    .hide-for-small-only {
-        display: none;
-    }
+  .hide-for-small-only {
+      display: none;
+  }
 }
 
 .click-underline-container {
-    @media(min-width: map-get($breakpoints, medium)) {
-        position: relative;
-        .underline {
-            position: absolute;
-            width: 100%;
-            height: rem-calc(2);
-            bottom: rem-calc(-6);
-            background: linear-gradient(to left, rgba(0,0,0,0) 50%, map-get(map-get($foundation-palette, primary), first) 50%) right;
-            background-size: 201%;
-            transition: 0.3s all;
-        }
-        &:hover {
-            span {
-                color: map-get(map-get($foundation-palette, primary), first)!important;
-            }
-            .underline {
-                transform: scaleX(1);
-                background-position: left;
-            }
-        }
+  @media(min-width: map-get($breakpoints, medium)) {
+    position: relative;
+    .underline {
+      position: absolute;
+      width: 100%;
+      height: rem-calc(2);
+      bottom: rem-calc(-6);
+      background: linear-gradient(to left, rgba(0,0,0,0) 50%, map-get(map-get($foundation-palette, primary), first) 50%) right;
+      background-size: 201%;
+      transition: 0.3s all;
     }
+    &:hover {
+      span {
+          color: map-get(map-get($foundation-palette, primary), first)!important;
+      }
+      .underline {
+          transform: scaleX(1);
+          background-position: left;
+      }
+    }
+  }
 }
 

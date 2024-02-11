@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.scss";
 import { Route, Routes as Switch } from "react-router-dom";
 import HomePage from "pages/HomePage";
 import ProductDetail from "pages/ProductDetail";

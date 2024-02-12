@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { detailProduct, listProductOffers } from "reduxDir/actions/product";
 import { useDispatch, useSelector } from "react-redux";
 import BannerPage from "components/Banner/BannerPage";
-import ProductCarousel from "components/ProductCarousel";
+import ProductCarousel from "components/Product/ProductCarousel";
 import ProductDetailImage from "./ProductDetailImage";
 import ProductDetailInfo from "./ProductDetailInfo";
 import ProductInfo from "./ProductInfo";

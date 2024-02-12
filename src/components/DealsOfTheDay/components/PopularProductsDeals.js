@@ -1,5 +1,5 @@
 import React from "react";
-import ProductLineItemsDaysOffer from "components/ProductLineItems/components/ProductLineItemsDaysOffer";
+import ProductLineItemsDaysOffer from "components/Product/ProductLineItems/components/ProductLineItemsDaysOffer";
 
 export default function PopularProductsDeals(props) {
   const { daysOffer } = props;

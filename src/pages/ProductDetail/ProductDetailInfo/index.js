@@ -1,5 +1,5 @@
 import React from "react";
-import RatingStars from "components/ProductTile/components/RatingStars";
+import RatingStars from "components/Product/ProductTile/components/RatingStars";
 import AddToCartPdpForm from "../AddToCartPdpForm";
 
 export default function ProductDetailInfo(props) {

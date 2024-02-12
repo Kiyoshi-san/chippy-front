@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ProductTileDescription from "../ProductTile/components/ProductTileDescription";
-// import Carousel from "react-multi-carousel";
-import ButtonHoverEffect from "../Button/ButtonHoverEffect";
+import Carousel from "react-multi-carousel";
+import ButtonHoverEffect from "../../Button/ButtonHoverEffect";
+import ProductExpirationTime from "../ProductExpirationTime";
 
 export default function ProductTileHome(props) {
   const { days, hours, mins, secs } = props;
@@ -42,8 +43,6 @@ export default function ProductTileHome(props) {
     );
   };
 
-  const Carousel = ({ children }) => <div>{children}</div>;
-
   return (
     <>
       {products?.length && (
@@ -71,24 +70,12 @@ export default function ProductTileHome(props) {
           {products?.map((prod) => (
             <>
               <div className="image-container">
-                <div className="expiration-time-container">
-                  <div className="days">
-                    <h1>{days}</h1>
-                    <span>dias</span>
-                  </div>
-                  <div className="hours">
-                    <h1>{hours}</h1>
-                    <span>horas</span>
-                  </div>
-                  <div className="minutes">
-                    <h1>{mins}</h1>
-                    <span>mins</span>
-                  </div>
-                  <div className="secs">
-                    <h1>{secs}</h1>
-                    <span>segs</span>
-                  </div>
-                </div>
+                <ProductExpirationTime
+                  days={days}
+                  hours={hours}
+                  mins={mins}
+                  secs={secs}
+                />
                 <div className="image-box">
                   <Link
                     to={`/product/${prod.categoryName}/${prod.name}/${prod._id}`}

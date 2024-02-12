@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import ProductTileHome from "../ProductTileHome";
+import ProductTileHome from "../Product/ProductTileHome";
 import MultCategories from "./MultCategories";
 import PopularProductsDeals from "./components/PopularProductsDeals";
 

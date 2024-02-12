@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Banner from "components/Banner/BannerPage";
 import DealsOfTheDay from "components/DealsOfTheDay";
-import ProductCarousel from "components/ProductCarousel";
+import ProductCarousel from "components/Product/ProductCarousel";
 import CategoryBanners from "components/CategoryBanners";
 import ServiceBanner from "components/ServiceBanner";
 import { listProductOffers } from "reduxDir/actions/product";

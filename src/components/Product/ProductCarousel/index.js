@@ -1,8 +1,8 @@
 import React from "react";
-// import Carousel from "react-multi-carousel";
-import ButtonHoverEffect from "../Button/ButtonHoverEffect";
-import ProductTile from "../ProductTile";
-import TitleColor from "../TitleColor";
+import Carousel from "react-multi-carousel";
+import ButtonHoverEffect from "../../Button/ButtonHoverEffect";
+import ProductTile from "../../Product/ProductTile";
+import TitleColor from "../../TitleColor";
 
 export default function ProductCarousel(props) {
   const { products, title } = props;
@@ -51,8 +51,6 @@ export default function ProductCarousel(props) {
       </ButtonHoverEffect>
     );
   };
-
-  const Carousel = ({ children }) => <div>{children}</div>;
 
   return (
     <div className="product-carousel">

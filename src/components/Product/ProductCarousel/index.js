@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import ButtonHoverEffect from "../../Button/ButtonHoverEffect";
 import ProductTile from "../../Product/ProductTile";
 import TitleColor from "../../TitleColor";

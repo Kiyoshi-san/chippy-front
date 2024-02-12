@@ -67,32 +67,30 @@ export default function ProductTileHome(props) {
           arrows={false}
           customButtonGroup={<ButtonGroup />}
         >
-          {products?.map((prod) => (
-            <>
-              <div className="image-container">
-                <ProductExpirationTime
-                  days={days}
-                  hours={hours}
-                  mins={mins}
-                  secs={secs}
-                />
-                <div className="image-box">
-                  <Link
-                    to={`/product/${prod.categoryName}/${prod.name}/${prod._id}`}
-                  >
-                    <img src={prod.image[0]} alt="brinquedo-de-cachorro" />
-                  </Link>
-                </div>
-                <ProductTileDescription
-                  productId={prod._id}
-                  name={prod.name}
-                  category={prod.category}
-                  oldPrice={prod.oldPrice}
-                  newPrice={prod.newPrice}
-                  rating={prod.rating}
-                ></ProductTileDescription>
+          {products?.map((prod, id) => (
+            <div key={id} className="image-container">
+              <ProductExpirationTime
+                days={days}
+                hours={hours}
+                mins={mins}
+                secs={secs}
+              />
+              <div className="image-box">
+                <Link
+                  to={`/product/${prod.categoryName}/${prod.name}/${prod._id}`}
+                >
+                  <img src={prod.image[0]} alt="brinquedo-de-cachorro" />
+                </Link>
               </div>
-            </>
+              <ProductTileDescription
+                productId={prod._id}
+                name={prod.name}
+                category={prod.category}
+                oldPrice={prod.oldPrice}
+                newPrice={prod.newPrice}
+                rating={prod.rating}
+              ></ProductTileDescription>
+            </div>
           ))}
         </Carousel>
       )}

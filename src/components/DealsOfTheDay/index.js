@@ -8,7 +8,7 @@ export default function DealsOfTheDay(props) {
   const { products } = props;
 
   useEffect(() => {
-    //   TODO BRING EXPIRATION TIME
+    //   TODO: BRING EXPIRATION TIME
   });
 
   return (

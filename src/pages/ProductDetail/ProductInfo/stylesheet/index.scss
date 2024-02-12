@@ -4,7 +4,7 @@
         padding: rem-calc(20);
         .description-container {
             span {
-                @include Courier(400);
+                @include Poppins(400);
                 font-size: rem-calc(12);
                 color: map-get(map-get($foundation-palette, primary), third);
             }
@@ -12,7 +12,7 @@
         .tag-category-container {
             display: flex;
             .tag {
-                @include Courier(600);
+                @include Poppins(600);
                 margin-right: rem-calc(20);
                 font-size: rem-calc(12);
                 text-transform: uppercase;
@@ -25,7 +25,7 @@
         }
         .review-product-container {
             h2 {
-                @include Courier(600);
+                @include Poppins(600);
                 font-size: rem-calc(18);
                 color: map-get(map-get($foundation-palette, secondary), sixth);
             }
@@ -74,7 +74,7 @@
                     }
                 }
                 h2 {
-                    @include Courier(800);
+                    @include Poppins(800);
                     font-size: rem-calc(14);
                     text-transform: uppercase;
                     color: map-get(map-get($foundation-palette, primary), fifth);
@@ -116,7 +116,7 @@
                 }
             }
             h2 {
-                @include Courier(800);
+                @include Poppins(800);
                 font-size: rem-calc(14);
                 text-transform: uppercase;
                 color: map-get(map-get($foundation-palette, primary), fifth);

@@ -9,11 +9,11 @@
         font-size: rem-calc(12);
         margin-left: rem-calc(10);
         strong {
-            @include Courier(800);
+            @include Poppins(800);
             letter-spacing: rem-calc(-1);
         }
         span {
-            @include Courier(400);
+            @include Poppins(400);
             color: map-get(map-get($foundation-palette, primary), third);
             letter-spacing: rem-calc(-1);
         }

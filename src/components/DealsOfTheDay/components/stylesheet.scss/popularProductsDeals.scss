@@ -11,10 +11,10 @@
                 text-transform: uppercase;
             }
             strong {
-                @include Courier(800);
+                @include Poppins(800);
             }
             span {
-                @include Courier(400);
+                @include Poppins(400);
             }
         }
     }

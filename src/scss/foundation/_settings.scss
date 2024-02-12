@@ -15,8 +15,8 @@ $AvalonXLightObl: 'AvalonXLightObl', Arial, sans-serif;
 $Georgia: Georgia, "Times New Roman", Times, serif;
 $Helvetica: 'Helvetica neue', Helvetica, Arial;
 
-@mixin Courier($font-weight) {
-    font-family: 'Courier New', Helvetica, sans-serif;
+@mixin Poppins($font-weight) {
+    font-family: 'Poppins', Helvetica, sans-serif;
     font-weight: $font-weight;
 }
 

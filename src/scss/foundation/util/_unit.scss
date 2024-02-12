@@ -15,8 +15,14 @@ $global-font-size: 100% !default;
 /// @param {Number} $num - Number to strip unit from.
 ///
 /// @returns {Number} The same number, sans unit.
-@function strip-unit($num) {
-  @return calc($num);
+/* @function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+} */
+
+@use 'sass:math';
+
+@function strip-unit($number) {
+  @return math.div($number, ($number * 0 + 1));
 }
 
 /// Converts one or more pixel values into matching rem values.a
@@ -25,39 +31,69 @@ $global-font-size: 100% !default;
 /// @param {Number} $base [null] - The base value to use when calculating the `rem`. If you're using Foundation out of the box, this is 16px. If this parameter is `null`, the function will reference the `$base-font-size` variable as the base.
 ///
 /// @returns {List} A list of converted values.
-@function rem-calc($values, $base: null) {
+// @function rem-calc($values, $base: null) {
+//   $rem-values: ();
+//   $count: length($values);
+
+//   // If no base is defined, defer to the global font size
+//   @if $base == null {
+//     $base: $global-font-size;
+//   }
+
+//   // If the base font size is a %, then multiply it by 16px
+//   // This is because 100% font size = 16px in most all browsers
+//   @if unit($base) == '%' {
+//     $base: calc($base / 100%) * 16px;
+//     $base: calc($base / 100%) * 16px;
+//   }
+
+//   // Using rem as base allows correct scaling
+//   /* @if unit($base) == 'rem' {
+//     $base: strip-unit($base) * 16px;
+//   } */
+
+//   @if $count == 1 {
+//     @return -zf-to-rem($values, $base);
+//   }
+
+//   @for $i from 1 through $count {
+//     $rem-values: append($rem-values, -zf-to-rem(nth($values, $i), $base));
+//   }
+
+//   @return $rem-values;
+// }
+
+$base-font-size: 16; // Set your base font size
+
+/* @function rem-calc($values) {
   $rem-values: ();
-  $count: length($values);
 
-  // If no base is defined, defer to the global font size
-  @if $base == null {
-    $base: $global-font-size;
+  @for $i from 1 through length($values) {
+    $value: nth($values, $i);
+    // Convert each pixel value to rem
+    $rem-value: calc($value / $base-font-size);
+    // Append the rem value to the list
+    $rem-values: append($rem-values, $rem-value + 'rem');
   }
 
-  // If the base font size is a %, then multiply it by 16px
-  // This is because 100% font size = 16px in most all browsers
-  @if unit($base) == '%' {
-    $base: calc($base / 100%) * 16px;
-  }
+  // Return the list of rem values
+  @return $rem-values;
+} */
 
-  // Using rem as base allows correct scaling
-  @if unit($base) == 'rem' {
-    $base: strip-unit($base) * 16px;
+@function rem-calc($values) {
+  $rem-values: ();
+  @for $i from 1 through length($values) {
+    $value: nth($values, $i);
+    // Convert each pixel value to rem
+    $rem-value: calc($value / $base-font-size);
+    // Append the rem value to the list
+    $rem-values: append($rem-values, strip-unit($rem-value) + rem);
   }
-
-  @if $count == 1 {
-    @return -zf-to-rem($values, $base);
-  }
-
-  @for $i from 1 through $count {
-    $rem-values: append($rem-values, -zf-to-rem(nth($values, $i), $base));
-  }
-
   @return $rem-values;
 }
 
 // Converts a unitless, pixel, or rem value to em, for use in breakpoints.
-@function -zf-bp-to-em($value) {
+/* @function -zf-bp-to-em($value) {
   // Pixel and unitless values are converted to rems
   @if unit($value) == 'px' or unitless($value) {
     $value: rem-calc($value, $base: 16px);
@@ -65,7 +101,7 @@ $global-font-size: 100% !default;
 
   // Then the value is converted to ems
   @return strip-unit($value) * 1em;
-}
+} */
 
 /// Converts a pixel value to matching rem value. *Any* value passed, regardless of unit, is assumed to be a pixel value. By default, the base pixel value used to calculate the rem value is taken from the `$global-font-size` variable.
 /// @access private
@@ -74,7 +110,7 @@ $global-font-size: 100% !default;
 /// @param {Number} $base [null] - Base for pixel conversion.
 ///
 /// @returns {Number} A number in rems, calculated based on the given value and the base pixel value. rem values are passed through as is.
-@function -zf-to-rem($value, $base: null) {
+/* @function -zf-to-rem($value, $base: null) {
   // Check if the value is a number
   @if type-of($value) != 'number' {
     @warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
@@ -83,8 +119,7 @@ $global-font-size: 100% !default;
 
   // Calculate rem if units for $value is not rem
   @if unit($value) != 'rem' {
-    // $value: calc(strip-unit($value) / strip-unit($base)) * 1rem;
-    $value: strip-unit($value);
+    $value: calc(strip-unit($value) / strip-unit($base)) * 1rem;
   }
 
   // Turn 0rem into 0
@@ -93,4 +128,4 @@ $global-font-size: 100% !default;
   }
 
   @return $value;
-}
+} */

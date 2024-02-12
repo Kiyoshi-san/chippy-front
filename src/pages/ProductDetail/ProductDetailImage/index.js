@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel } from "react-responsive-carousel";
+// import { Carousel } from "react-responsive-carousel";
 // import { SideBySideMagnifier } from "react-image-magnifiers";
 
 export default function ProductDetailImage(props) {
@@ -14,6 +14,8 @@ export default function ProductDetailImage(props) {
     fillGapRight = 10,
     fillGapTop = 10,
     fillGapBottom = 10; */
+
+  const Carousel = ({ children }) => <div>{children}</div>;
 
   return (
     <Carousel

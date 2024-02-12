@@ -9,7 +9,7 @@
         align-items: center;
         z-index: 1;
         h3 {
-            @include Courier(800);
+            @include Poppins(800);
             font-size: rem-calc(30);
             color: map-get(map-get($foundation-palette, primary), second);
             text-transform: uppercase;

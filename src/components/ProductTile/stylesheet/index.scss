@@ -17,7 +17,7 @@
             max-width: 80%;
             margin: 0 auto;
             h3 {
-                @include Courier(800);
+                @include Poppins(800);
                 min-height: rem-calc(35);
                 font-size: rem-calc(14);
                 color: map-get(map-get($foundation-palette, primary), third);

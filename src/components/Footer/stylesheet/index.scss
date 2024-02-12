@@ -51,7 +51,7 @@ $root-path: "~/src/assets/images/";
                     position: relative;
                     white-space: nowrap;
                     h3 {
-                        @include Courier(800);
+                        @include Poppins(800);
                         font-size: rem-calc(14);
                         color: map-get(map-get($foundation-palette, primary), second);
                         text-transform: uppercase;
@@ -68,7 +68,7 @@ $root-path: "~/src/assets/images/";
                     li {
                         line-height: rem-calc(30);
                         a, span {
-                            @include Courier(400);
+                            @include Poppins(400);
                             color: map-get(map-get($foundation-palette, primary), second);
                             font-size: rem-calc(12);
                             text-decoration: none;
@@ -93,7 +93,7 @@ $root-path: "~/src/assets/images/";
                 grid-template-columns: 1fr 1fr;
                 .title {
                     h3 {
-                        @include Courier(800);
+                        @include Poppins(800);
                         font-size: rem-calc(16);
                         color: map-get(map-get($foundation-palette, primary), second);
                     }
@@ -101,7 +101,7 @@ $root-path: "~/src/assets/images/";
                 .download-app {
                     display: grid;
                     justify-content: end;
-                    padding: rem-calc(0 20px);
+                    padding: rem-calc(0 20);
                     .title {
                         h3 {
                             text-align: end;
@@ -144,7 +144,7 @@ $root-path: "~/src/assets/images/";
                 padding: rem-calc(20);
                 text-align: center;
                 span {
-                    @include Courier(400);
+                    @include Poppins(400);
                     font-size: rem-calc(12);
                     color: map-get(map-get($foundation-palette, primary), second);
                     &.chippy-enterprise {

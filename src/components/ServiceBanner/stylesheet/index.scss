@@ -32,7 +32,7 @@
         }
         .description {
             h3, span {
-                @include Courier(400);
+                @include Poppins(400);
                 display: block;
                 color: map-get(map-get($foundation-palette, primary), second);
             }

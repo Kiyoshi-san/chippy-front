@@ -2,13 +2,13 @@
     background-color: map-get(map-get($foundation-palette, primary), second);
     padding: rem-calc(20);
     span {
-        @include Courier(400);
+        @include Poppins(400);
         color: map-get(map-get($foundation-palette, primary), third);
         font-size: rem-calc(13)
     }
     .title-container {
         h3 {
-            @include Courier(800);
+            @include Poppins(800);
             font-size: rem-calc(24);
             color: map-get(map-get($foundation-palette, primary), third);
         }
@@ -33,7 +33,7 @@
         margin-bottom: rem-calc(20);
         margin: rem-calc(0 0 10 0);
         h3 {
-            @include Courier(800);
+            @include Poppins(800);
             font-size: rem-calc(14);
             color: map-get(map-get($foundation-palette, primary), third);
             overflow: hidden;
@@ -43,14 +43,14 @@
             -webkit-box-orient: vertical;
         }
         .old-price {
-            @include Courier(400);
+            @include Poppins(400);
             text-decoration: line-through;
             font-size: rem-calc(12);
             color: map-get(map-get($foundation-palette, secondary), sixth);
             margin-right: rem-calc(10);
         }
         .new-price {
-            @include Courier(400);
+            @include Poppins(400);
             font-size: rem-calc(18);
             color: map-get(map-get($foundation-palette, primary), fourth);
         }
@@ -62,7 +62,7 @@
             width: 80%;
             .title {
                 h2 {
-                    @include Courier(800);
+                    @include Poppins(800);
                     font-size: rem-calc(16);
                     color: map-get(map-get($foundation-palette, primary), third);
                 }
@@ -78,7 +78,7 @@
             }
         }
         .see-more {
-            @include Courier(800);
+            @include Poppins(800);
             font-size: rem-calc(13);
             letter-spacing: rem-calc(-1);
             display: flex;

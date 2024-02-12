@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ProductTileDescription from "../ProductTile/components/ProductTileDescription";
-import Carousel from "react-multi-carousel";
+// import Carousel from "react-multi-carousel";
 import ButtonHoverEffect from "../Button/ButtonHoverEffect";
 
 export default function ProductTileHome(props) {
@@ -41,6 +41,8 @@ export default function ProductTileHome(props) {
       </div>
     );
   };
+
+  const Carousel = ({ children }) => <div>{children}</div>;
 
   return (
     <>

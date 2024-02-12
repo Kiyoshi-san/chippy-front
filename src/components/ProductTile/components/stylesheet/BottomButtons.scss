@@ -20,7 +20,7 @@
             }
         }
         span {
-            @include Courier(800);
+            @include Poppins(800);
             font-size: rem-calc(12);
             text-transform: uppercase;
             color: map-get(map-get($foundation-palette, primary), first);

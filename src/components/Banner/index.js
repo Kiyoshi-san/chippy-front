@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Carousel from "react-multi-carousel";
+// import Carousel from "react-multi-carousel";
 import ButtonFilled from "../Button/ButtonFilled/index";
-import "react-multi-carousel/lib/styles.css";
+// import "react-multi-carousel/lib/styles.css";
 
 import banner1 from "images/banner/banner1.jpg";
 import banner2 from "images/banner/banner2.jpg";
@@ -34,6 +34,8 @@ export default function Banner() {
       partialVisibilityGutter: 0, // this is needed to tell the amount of px that should be visible.
     },
   };
+
+  const Carousel = ({ children }) => <div>{children}</div>;
 
   return (
     <>

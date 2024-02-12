@@ -2,7 +2,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Dotenv = require("dotenv-webpack");
 
+const devMode = process.env.NODE_ENV !== "production";
+
 const path = require("path");
+
+let PORT = 3001;
 
 module.exports = {
   mode: "development", // or 'production'
@@ -14,12 +18,12 @@ module.exports = {
     clean: true,
     assetModuleFilename: "[name].[ext]",
   },
-  devtool: "source-map", // Source map mostra a linha do erro no arquivo
+  devtool: devMode ? "source-map" : "", // Source map mostra a linha do erro no arquivo
   devServer: {
     static: {
       directory: path.resolve(__dirname, "dist"),
     },
-    port: 3000,
+    port: PORT,
     open: true,
     hot: true,
     compress: true,
@@ -27,7 +31,7 @@ module.exports = {
   },
   resolve: {
     modules: [path.resolve(__dirname, "./src"), "node_modules"],
-    extensions: ["", ".js", ".jsx", ".ts", ".tsx"],
+    extensions: ["", ".js", ".jsx", ".ts", ".tsx"], // This allows you to simplify your imports by omitting the file extension:
     alias: {
       images: path.resolve(__dirname, "./src/assets/images"),
       components: path.resolve(__dirname, "./src/components"),
@@ -61,6 +65,7 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
+        include: [path.resolve(__dirname, "src", "scss")],
         use: [
           {
             loader: MiniCssExtractPlugin.loader,

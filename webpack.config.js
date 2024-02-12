@@ -95,15 +95,7 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]", // ?name=[name].[ext] is only necessary to preserve the original file name
-              outputPath: "static/images/",
-            },
-          },
-        ],
+        type: "asset/resource", // para o background-image no sass estava encontrando o caminho da imagem pelo root no sass, mas no browser não carregava, com esse type asset/resource funcionou
       },
     ],
   },

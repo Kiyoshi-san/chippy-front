@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Dotenv = require("dotenv-webpack");
+const openBrowser = require("react-dev-utils/openBrowser");
 
 const devMode = process.env.NODE_ENV !== "production";
 
@@ -24,8 +25,12 @@ module.exports = {
       directory: path.resolve(__dirname, "dist"),
     },
     port: PORT,
-    open: true,
+    open: false,
     hot: true,
+    onListening: function (devServer) {
+      const { port } = devServer.server.address();
+      openBrowser(`http://localhost:${port}`); // when we start the server it will open the same tab if it already exists
+    },
     compress: true,
     historyApiFallback: true,
   },
@@ -65,7 +70,7 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        include: [path.resolve(__dirname, "src", "scss")],
+        // include: [path.resolve(__dirname, "src", "scss")], // sem esse loader estava dando erro na lib do carrossel: react multi carousel Module parse failed: Unexpected character '@'
         use: [
           {
             loader: MiniCssExtractPlugin.loader,

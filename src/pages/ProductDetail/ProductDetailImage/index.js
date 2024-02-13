@@ -1,10 +1,20 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-// import { SideBySideMagnifier } from "react-image-magnifiers";
+import { SideBySideMagnifier } from "react-image-magnifiers";
 
 export default function ProductDetailImage(props) {
   const { productDetail } = props;
+
+  const alwaysInPlace = true,
+    overlayOpacity = 0.6,
+    switchSides = false,
+    fillAvailableSpace = false,
+    fillAlignTop = false,
+    fillGapLeft = 0,
+    fillGapRight = 10,
+    fillGapTop = 10,
+    fillGapBottom = 10;
 
   const responsive = {
     desktop: {
@@ -49,34 +59,31 @@ export default function ProductDetailImage(props) {
     >
       {!!productDetail?.image.length &&
         productDetail?.image.map((prodDetailImg, id) => {
-          console.log(prodDetailImg);
-
           return (
             <div key={id} className="product-detail-page-carousel-image-zoom">
-              {/* <img className="thumbnail-carousel-zoom" src={prodDetailImg} /> */}
               <img
                 className="thumbnail-carousel-zoom"
                 src={`/${prodDetailImg}`}
               />
-              {/* <SideBySideMagnifier
-              className="input-position"
-              style={{ order: switchSides ? "1" : "0" }}
-              imageSrc={prodDetailImg}
-              largeImageSrc={prodDetailImg}
-              alwaysInPlace={alwaysInPlace}
-              overlayOpacity={overlayOpacity}
-              switchSides={switchSides}
-              zoomPosition="left"
-              inPlaceMinBreakpoint={641}
-              fillAvailableSpace={fillAvailableSpace}
-              fillAlignTop={fillAlignTop}
-              fillGapTop={fillGapTop}
-              fillGapRight={fillGapRight}
-              fillGapBottom={fillGapBottom}
-              fillGapLeft={fillGapLeft}
-              zoomContainerBorder="1px solid #ccc"
-              zoomContainerBoxShadow="0 4px 8px rgba(0,0,0,.5)"
-            /> */}
+              <SideBySideMagnifier
+                className="input-position"
+                style={{ order: switchSides ? "1" : "0" }}
+                imageSrc={`/${prodDetailImg}`}
+                largeImageSrc={`/${prodDetailImg}`}
+                alwaysInPlace={alwaysInPlace}
+                overlayOpacity={overlayOpacity}
+                switchSides={switchSides}
+                zoomPosition="left"
+                inPlaceMinBreakpoint={641}
+                fillAvailableSpace={fillAvailableSpace}
+                fillAlignTop={fillAlignTop}
+                fillGapTop={fillGapTop}
+                fillGapRight={fillGapRight}
+                fillGapBottom={fillGapBottom}
+                fillGapLeft={fillGapLeft}
+                zoomContainerBorder="1px solid #ccc"
+                zoomContainerBoxShadow="0 4px 8px rgba(0,0,0,.5)"
+              />
             </div>
           );
         })}

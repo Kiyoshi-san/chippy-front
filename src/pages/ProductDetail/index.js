@@ -22,15 +22,15 @@ export default function Banner() {
     dispatchHandler();
   }, []);
 
-  const productDetailList = useSelector((state) => state.productDetail);
-  const { productDetail } = productDetailList;
+  const { loading, productDetail } = useSelector((state) => state);
+  const { productDetail: productDet } = productDetail;
 
   useEffect(() => {
     var dispatchHandler = () => {
       dispatch(detailProduct(id));
     };
     dispatchHandler();
-  }, [id, dispatch]);
+  }, [id, dispatch, loading]);
 
   return (
     <div className="product-detail-page-container">
@@ -38,11 +38,11 @@ export default function Banner() {
       <div className="body-row-container bg-gray">
         <div className="body-row">
           <div className="product-detail-info">
-            <ProductDetailImage productDetail={productDetail} />
-            <ProductDetailInfo productDetail={productDetail} />
+            <ProductDetailImage productDetail={productDet} />
+            <ProductDetailInfo productDetail={productDet} />
           </div>
 
-          <ProductInfo productDetail={productDetail} />
+          <ProductInfo productDetail={productDet} />
 
           <ProductCarousel products={data} title="Produtos Relacionados" />
         </div>

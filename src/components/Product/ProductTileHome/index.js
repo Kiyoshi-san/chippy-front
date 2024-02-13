@@ -46,7 +46,7 @@ export default function ProductTileHome(props) {
 
   return (
     <>
-      {products?.length && (
+      {!!products?.length && (
         <Carousel
           containerClass="product-tile-home-container"
           itemClass="carousel-item-height"

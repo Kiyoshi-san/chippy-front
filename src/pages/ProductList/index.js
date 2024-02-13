@@ -13,7 +13,7 @@ export default function ProductList() {
 
   return (
     <div>
-      {products?.length &&
+      {!!products?.length &&
         products.map((product, id) => <div key={id}>{product.name}</div>)}
     </div>
   );

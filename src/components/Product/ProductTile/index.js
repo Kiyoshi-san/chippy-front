@@ -6,13 +6,15 @@ import BottomButtons from "./components/BottomButtons";
 export default function ProductTile(props) {
   const { product } = props;
 
+  // console.log(product);
+
   return (
     <div className="product-tile">
       <Link
         to={`/product/${product.categoryName}/${product.name}/${product._id}`}
       >
         <div className="image-product-container">
-          <img src={product.image[0]} alt={product.name} />
+          <img src={`/${product.image[0]}`} alt={product.name} />
         </div>
       </Link>
       <div className="description">

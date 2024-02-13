@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { detailProduct, listProductOffers } from "reduxDir/actions/product";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";

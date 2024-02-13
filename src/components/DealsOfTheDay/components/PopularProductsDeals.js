@@ -12,7 +12,7 @@ export default function PopularProductsDeals(props) {
         </h1>
       </div>
       <div className="productlist">
-        {daysOffer?.length &&
+        {!!daysOffer?.length &&
           daysOffer.map((dO) => (
             <div key={dO.name}>
               <ProductLineItemsDaysOffer

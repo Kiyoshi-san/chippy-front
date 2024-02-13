@@ -5,9 +5,7 @@ import ButtonHoverEffect from "../../Button/ButtonHoverEffect";
 import ProductTile from "../../Product/ProductTile";
 import TitleColor from "../../TitleColor";
 
-export default function ProductCarousel(props) {
-  const { products, title } = props;
-
+export default function ProductCarousel({ products, title }) {
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -56,7 +54,7 @@ export default function ProductCarousel(props) {
   return (
     <div className="product-carousel">
       <TitleColor title={title} />
-      {products?.length && (
+      {!!products?.length && (
         <Carousel
           containerClass="product-tile-home-container"
           itemClass="carousel-item-height"

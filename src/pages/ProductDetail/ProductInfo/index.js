@@ -15,7 +15,7 @@ export default function ProductInfo(props) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(listProductOffers());
-  });
+  }, [dispatch]);
 
   const activeTabHandler = (tabIndex) => {
     activeTab !== tabIndex ? setActiveTab(tabIndex) : setActiveTab("");
@@ -100,12 +100,12 @@ export default function ProductInfo(props) {
                 </div>
               )}
             </div>
-          ) : activeTab == 4 ? (
+          ) : activeTab == 4 && productDetail?.seller?.seller ? (
             <div className="seller-container">
-              <h2>{productDetail?.seller.seller.name}</h2>
+              <h2>{productDetail?.seller?.seller?.name}</h2>
               <RatingStars
-                rating={productDetail?.seller.seller.rating}
-                numReviews={productDetail?.seller.seller.numReviews}
+                rating={productDetail?.seller?.seller?.rating}
+                numReviews={productDetail?.seller?.seller?.numReviews}
               />
             </div>
           ) : activeTab == 5 ? (
@@ -180,15 +180,17 @@ export default function ProductInfo(props) {
           className={`description-container`}
           onClick={() => activeTabHandler(4)}
         >
-          <div className={`label-tab ${activeTab == 4 ? "active" : ""}`}>
+          <div
+            className={`label-tab ${activeTab == 4 && productDetail?.seller?.seller ? "active" : ""}`}
+          >
             <h2>Vendedor</h2>
           </div>
           <div className="body-container">
             <div className="seller-container">
-              <h2>{productDetail?.seller.seller.name}</h2>
+              <h2>{productDetail?.seller?.seller?.name}</h2>
               <RatingStars
-                rating={productDetail?.seller.seller.rating}
-                numReviews={productDetail?.seller.seller.numReviews}
+                rating={productDetail?.seller?.seller?.rating}
+                numReviews={productDetail?.seller?.seller?.numReviews}
               />
             </div>
           </div>

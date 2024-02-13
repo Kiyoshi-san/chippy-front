@@ -2,14 +2,16 @@ import React, { useEffect } from "react";
 // import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { detailProduct, listProductOffers } from "reduxDir/actions/product";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import BannerPage from "components/Banner/BannerPage";
 import ProductCarousel from "components/Product/ProductCarousel";
 import ProductDetailImage from "./ProductDetailImage";
 import ProductDetailInfo from "./ProductDetailInfo";
 import ProductInfo from "./ProductInfo";
 
-export default function Banner(props) {
+export default function Banner() {
   const dispatch = useDispatch();
+  const { id } = useParams();
 
   const productOffers = useSelector((state) => state.productOffers);
   const { data } = productOffers;
@@ -18,16 +20,11 @@ export default function Banner(props) {
       dispatch(listProductOffers());
     };
     dispatchHandler();
-  });
+  }, []);
 
   const productDetailList = useSelector((state) => state.productDetail);
   const { productDetail } = productDetailList;
 
-  const {
-    match: {
-      params: { id },
-    },
-  } = props;
   useEffect(() => {
     var dispatchHandler = () => {
       dispatch(detailProduct(id));

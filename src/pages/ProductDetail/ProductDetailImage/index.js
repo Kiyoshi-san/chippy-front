@@ -61,10 +61,10 @@ export default function ProductDetailImage(props) {
         productDetail?.image.map((prodDetailImg, id) => {
           return (
             <div key={id} className="product-detail-page-carousel-image-zoom">
-              <img
+              {/* <img
                 className="thumbnail-carousel-zoom"
                 src={`/${prodDetailImg}`}
-              />
+              /> */}
               <SideBySideMagnifier
                 className="input-position"
                 style={{ order: switchSides ? "1" : "0" }}

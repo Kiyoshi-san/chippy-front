@@ -6,7 +6,7 @@ const devMode = process.env.NODE_ENV !== "production";
 
 const path = require("path");
 
-let PORT = 3001;
+let PORT = 3000;
 
 module.exports = {
   mode: "development", // or 'production'
@@ -45,7 +45,7 @@ module.exports = {
     new Dotenv(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public", "index.html"),
-      favicon: "./public/favicon.ico",
+      favicon: "./public/chippy_logo3.ico",
       filename: "index.html",
       manifest: "./public/manifest.json",
     }),

@@ -6,8 +6,6 @@ import BottomButtons from "./components/BottomButtons";
 export default function ProductTile(props) {
   const { product } = props;
 
-  // console.log(product);
-
   return (
     <div className="product-tile">
       <Link
